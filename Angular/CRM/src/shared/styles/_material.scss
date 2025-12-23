@@ -1,0 +1,48 @@
+@use "@angular/material" as mat;
+@use "./theme-colors" as my-theme;
+
+html {
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: my-theme.$primary-palette,
+        tertiary: my-theme.$tertiary-palette,
+      ),
+      typography: (
+        plain-family: "IRANSans",
+        // Applies to most text
+        brand-family: "IRANSans",
+        // Applies to headings and titles
+      ),
+      density: 0,
+    )
+  );
+
+  // Dark theme
+  &.dark {
+    color-scheme: dark;
+
+    @include mat.theme(
+      (
+        color: (
+          primary: my-theme.$secondary-palette,
+          tertiary: my-theme.$tertiary-palette,
+        ),
+        typography: (
+          plain-family: "IRANSans",
+          // Applies to most text
+          brand-family: "IRANSans",
+          // Applies to headings and titles
+        ),
+        density: 0,
+      )
+    );
+  }
+
+  // High contrast support
+  @media (prefers-contrast: more) {
+    @include my-theme.high-contrast-overrides(color-scheme);
+  }
+}

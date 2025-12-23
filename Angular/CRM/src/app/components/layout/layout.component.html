@@ -1,0 +1,80 @@
+<div class="page">
+  <div class="app-offcanvas-overlay"></div>
+  <app-header />
+  <div class="app-content-area">
+    <div class="app-content-wrap">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <app-sub-header />
+          </div>
+          <div class="col-sm-12">
+            <app-charts-section />
+          </div>
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-3 h-100">
+                <app-pipeline-radial-chart />
+              </div>
+              <div class="col-sm-3 h-100">
+                <app-recent-activities />
+              </div>
+              <div class="col-sm-3 h-100">
+                <app-global-heat-map />
+              </div>
+              <div class="col-sm-3 h-100">
+                <app-get-know-us />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-12">
+            <div class="card">
+              <div class="card-header justify-between">
+                <h4 class="">نمای کلی وضعیت معامله</h4>
+              </div>
+              <app-transaction-status-table />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Modal Start -->
+  <div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="input-group">
+            <input class="form-control" placeholder="جستجو ..." type="search" />
+            <button class="btn btn-primary" id="button-addon1" type="button">
+              <i class="ri-search-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Modal End -->
+  <!-- footer area end -->
+</div>
+<!-- Dashboard page wrapper end -->
+<!-- back to top area start -->
+<div class="progress-wrap">
+  <svg
+    class="progress-circle svg-content"
+    height="100%"
+    viewbox="-1 -1 102 102"
+    width="100%"
+  >
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+  </svg>
+</div>
+<!-- back to top area end -->
+<!-- switcher area start -->
+<div class="theme-switcher-settings d-none">
+  <div class="theme-switcher">
+    <i class="ri-sun-line change-theme" id="theme-button"></i>
+  </div>
+</div>
+

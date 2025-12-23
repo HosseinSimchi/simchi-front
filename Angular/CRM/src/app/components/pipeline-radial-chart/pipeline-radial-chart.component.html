@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header justify-between">
+    <h4 class="">خط لوله فروش</h4>
+  </div>
+  <div class="card-body">
+    <app-charts
+      [chartId]="'pipelineRadialChart'"
+      [chartInfo]="pipelineRadialChartInfo()"
+    />
+  </div>
+  <div class="card-body pt-145 d-flex align-items-center justify-content-center">
+    <div id="contacts-source"></div>
+    <div class="col-sm-6">
+      <div class="pipeline-stats mt-15">
+        <div class="d-flex justify-between align-center mb-8">
+          <div class="d-flex align-center gap-10">
+            <span class="bullet bg-primary"></span>
+            <span class="fs-14">واجد شرایط</span>
+          </div>
+          <span class="fw-500">۱۲۴<span class="text-muted">(۲۵ ٪)</span></span>
+        </div>
+        <div class="d-flex justify-between align-center mb-8">
+          <div class="d-flex align-center gap-10">
+            <span class="bullet bg-info"></span>
+            <span class="fs-14">چشم انداز</span>
+          </div>
+          <span class="fw-500">۹۸<span class="text-muted">(۲۰ ٪)</span></span>
+        </div>
+        <div class="d-flex justify-between align-center mb-8">
+          <div class="d-flex align-center gap-10">
+            <span class="bullet bg-warning"></span>
+            <span class="fs-14">مذاکره</span>
+          </div>
+          <span class="fw-500">۷۶<span class="text-muted">(۱۵ ٪)</span></span>
+        </div>
+        <div class="d-flex justify-between align-center">
+          <div class="d-flex align-center gap-10">
+            <span class="bullet bg-success"></span>
+            <span class="fs-14">وانت</span>
+          </div>
+          <span class="fw-500">۲۰۲<span class="text-muted">(۴۰ ٪)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header justify-between">
+    <h4 class="">فعالیت اخیر</h4>
+    <app-button [text]="'مشاهده همه'" />
+  </div>
+  <div class="card-body pt-110">
+    <ul class="activity-list">
+      @for (item of (selectActivityList$ | async); track $index) {
+      <li class="d-flex align-start gap-15 mb-40">
+        <div [class]="item.cssStyles">
+          <i [class]="item.iocnClass"></i>
+        </div>
+        <div>
+          <h6 class="mb-5">{{ item.name }}</h6>
+          <p class="text-muted fs-12 mb-5">{{ item.description }}</p>
+          <span class="fs-11 text-muted">{{ item.date }}</span>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

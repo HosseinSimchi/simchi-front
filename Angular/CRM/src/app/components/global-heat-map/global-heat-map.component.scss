@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+
+  .leaflet-container {
+    font-family: "IRANSans";
+  }
+}
+.tableContainer {
+  margin-top: -170px;
+}
+// Custom tooltip
+.custom-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+
+  .location-tooltip {
+    strong {
+      color: #2d3748;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .intensity {
+      font-size: 11px;
+      color: #4a5568;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Map title container
+.map-title-container {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 10px;
+
+  .map-title {
+    h3 {
+      margin: 0 0 12px 0;
+      color: #2d3748;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .legend {
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: #4a5568;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .legend-color {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          margin-left: 8px;
+          box-shadow: 0 0 6px currentColor;
+        }
+      }
+    }
+  }
+}
+
+// Custom marker
+.custom-marker-container {
+  .custom-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px currentColor;
+
+    .marker-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+}
+
+// Heat circles animation
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.heat-circle {
+  animation: pulse 3s infinite;
+}

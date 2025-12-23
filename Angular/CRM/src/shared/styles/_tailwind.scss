@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* 🎨 Core color tokens (mapped to Angular Material vars) */
+  --color-primary: var(--md-sys-color-primary, #388e3c);
+  --color-on-primary: var(--md-sys-color-on-primary, #ffffff);
+  --color-primary-container: var(--md-sys-color-primary-container, #c8e6c9);
+  --color-on-primary-container: var(
+    --md-sys-color-on-primary-container,
+    #003308
+  );
+
+  --color-secondary: var(--md-sys-color-secondary, #ffffff);
+  --color-on-secondary: var(--md-sys-color-on-secondary, #000000);
+
+  --color-tertiary: var(--md-sys-color-tertiary, #004d78);
+  --color-on-tertiary: var(--md-sys-color-on-tertiary, #ffffff);
+
+  --color-error: var(--md-sys-color-error, #ba1a1a);
+  --color-on-error: var(--md-sys-color-on-error, #ffffff);
+
+  --color-background: var(--md-sys-color-background, #f6fbf0);
+  --color-on-background: var(--md-sys-color-on-background, #181d17);
+
+  --color-surface: var(--md-sys-color-surface, #f6fbf0);
+  --color-on-surface: var(--md-sys-color-on-surface, #181d17);
+
+  --color-outline: var(--md-sys-color-outline, #252f23);
+  --color-outline-variant: var(--md-sys-color-outline-variant, #424c3f);
+
+  /* 🖋️ Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* 🔠 Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* 🧱 Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* 🔳 Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* ✨ Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}

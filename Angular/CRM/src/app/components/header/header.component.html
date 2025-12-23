@@ -1,0 +1,107 @@
+<div class="app-header-area">
+  <header class="app-header" id="header">
+    <div class="app-header-inner">
+      <div class="app-header-left">
+        <div class="d-flex align-center gap-15">
+          <div class="app-header-ls-logo">
+            <!-- large screen logo -->
+            <a class="app-header-ls-dark-logo" href="index.html">
+              <img alt="image" src="assets/images/logo/logo-black.svg" />
+            </a>
+            <a class="app-header-ls-light-logo" href="index.html">
+              <img alt="image" src="assets/images/logo/logo-white.svg" />
+            </a>
+          </div>
+          <div class="app-header-mobile-logo">
+            <a class="app-header-dark-logo" href="index.html">
+              <img alt="image" src="assets/images/logo/mobile-logo.svg" />
+            </a>
+            <a class="app-header-light-logo" href="index.html">
+              <img alt="image" src="assets/images/logo/mobile-logo-light.svg" />
+            </a>
+          </div>
+        </div>
+        <div class="app-header-search d-none d-lg-block">
+          <form action="#">
+            <input
+              class="form-control"
+              [placeholder]="this.searchPlaceholder$ | async"
+              type="text"
+            />
+            <button type="submit"><i class="ri-search-line"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="app-header-right">
+        <div class="app-header-search-modal">
+          <button
+            class="app-header-circle"
+            data-bs-target="#searchModal"
+            data-bs-toggle="modal"
+            type="button"
+          >
+            <i class="ri-search-line"></i>
+          </button>
+        </div>
+        <div class="app-header-link">
+          <div class="dropdown">
+            <a
+              aria-expanded="false"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              href="javascript:void(0);"
+              role="button"
+            >
+              <span class="app-header-circle"
+                ><i class="ri-global-line"></i
+              ></span>
+            </a>
+            <ul class="dropdown-menu">
+              @for (item of this.languageSelection$ | async; track $index) {
+              <li>
+                <a class="dropdown-lang" href="javascript:void(0);"
+                  ><img alt="image not found" [src]="item.src" />{{
+                    item.name
+                  }}</a
+                >
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="app-header-switcher app-header-circle">
+          <div class="theme-switcher">
+            <i class="ri-sun-line change-theme theme-button"></i>
+          </div>
+        </div>
+        <div class="app-header-fullscreen app-header-circle cursor-pointer">
+          <div onclick="javascript:toggleFullScreen()">
+            <i class="ri-fullscreen-line"></i>
+          </div>
+        </div>
+        <div class="app-header-notification">
+          <div class="dropdown">
+            <a
+              aria-expanded="false"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown"
+              href="javascript:void(0);"
+              role="button"
+            >
+              <span class="app-header-circle"
+                ><i class="ri-notification-line"></i
+              ></span>
+            </a>
+            <ul class="dropdown-menu">
+              <app-notification />
+            </ul>
+          </div>
+        </div>
+        <div class="app-header-user">
+          <app-user-info />
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="body__overlay"></div>
+</div>

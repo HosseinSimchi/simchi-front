@@ -1,0 +1,7 @@
+<div class="d-flex-items gap-10">
+  @for (item of btnDataInfo; track $index) {
+  <a [class]="item.css" href="#">
+    <i [class]="item.icon_name"></i>
+  </a>
+  }
+</div>

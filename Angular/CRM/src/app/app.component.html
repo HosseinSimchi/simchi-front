@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+<!-- <div class="posts-container">
+  <header class="posts-header">
+    <h1 class="posts-title">📝 Posts Management</h1>
+    <div class="action-buttons">
+      <button class="btn btn-primary" (click)="loadPosts()">
+        <span class="btn-icon">🔄</span>
+        Load Posts
+      </button>
+      <button class="btn btn-secondary" (click)="addRandomPost()">
+        <span class="btn-icon">➕</span>
+        Add Random Post
+      </button>
+    </div>
+  </header>
+
+  <div class="posts-list">
+    <div *ngFor="let post of posts$ | async" class="post-card">
+      <div class="post-content">
+        <h3 class="post-title">{{ post.title }}</h3>
+        <p class="post-body">{{ post.body }}</p>
+        <div class="post-meta">
+          <span class="post-id">ID: {{ post.id }}</span>
+          <span class="post-user">User: {{ post.userId }}</span>
+        </div>
+      </div>
+      <button class="btn-delete" (click)="deletePost(post.id)">
+        <span class="delete-icon">🗑️</span>
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="(posts$ | async)?.length === 0" class="empty-state">
+    <div class="empty-icon">📭</div>
+    <h3>No posts yet</h3>
+    <p>Click "Load Posts" to fetch posts from the API</p>
+  </div>
+</div> -->

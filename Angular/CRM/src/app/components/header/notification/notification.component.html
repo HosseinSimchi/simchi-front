@@ -1,0 +1,40 @@
+<li class="dropdown-menu-header">
+  <h5>{{ (this.notificationState$ | async)?.title }}</h5>
+  <span class="badge bg-label-primary">{{
+    (this.notificationState$ | async)?.newMessages
+  }}</span>
+</li>
+<li class="dropdown-notifications-list card-scrollbar">
+  <ul>
+    @for (item of (this.notificationState$ | async)?.notificationItems; track
+    $index) {
+    <li class="dropdown-notifications-list-item">
+      <div class="avatar">
+        <img alt="image not found" class="radius-100" [src]="item.src" />
+      </div>
+      <div class="content">
+        <h6 class="mb-5">{{ item.title }}</h6>
+        <p class="mb-5">
+          {{ item.desc }}
+        </p>
+        <span class="text-body-secondary">{{ item.date }}</span>
+      </div>
+      <div class="notifications-actions d-flex direction-column align-center">
+        @if ($index == 0 || $index == 1) {
+        <a
+          class="dropdown-notifications-read d-block pt-5"
+          href="javascript:void(0);"
+          ><span class="bullet bg-primary"></span
+        ></a>
+        }
+        <a class="dropdown-notifications-archive" href="javascript:void(0);"
+          ><i class="ri-close-line"></i
+        ></a>
+      </div>
+    </li>
+    }
+  </ul>
+</li>
+<li class="dropdown-notifications-btn">
+  <app-button [text]="(this.notificationState$ | async)?.btnText"></app-button>
+</li>

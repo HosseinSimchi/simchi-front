@@ -1,0 +1,87 @@
+<div class="card">
+  <div class="card-header justify-between">
+    <h4 class="">هدایت شده توسط منبع</h4>
+  </div>
+  <div class="card-body">
+    <app-charts
+      [chartId]="'getKnowUsChart'"
+      [chartInfo]="getKnowUsInfo()"
+    />
+  </div>
+  <div class="card-body pt-15">
+    <div id="leadsPieChart"></div>
+    <div class="table-responsive">
+      <table class="table tfoot-b-none mb-0">
+        <thead>
+          <tr>
+            <th>منبع</th>
+            <th class="text-end">رهبری</th>
+            <th class="text-end">تغییر</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <span class="bullet bg-primary"></span>
+                <span>جستجوی ارگانیک</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDegits("1،245")}}</td>
+            <td class="text-end text-success">
+              {{persianDegits("+18.2")}} ٪<i class="ri-arrow-up-line"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <span class="bullet bg-info"></span>
+                <span>رسانه های اجتماعی</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDegits("876")}}</td>
+            <td class="text-end text-success">
+              {{persianDegits("+12.7")}} ٪<i class="ri-arrow-up-line"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <span class="bullet bg-warning"></span>
+                <span>کمپین های ایمیل</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDegits("645")}}</td>
+            <td class="text-end text-danger">
+              {{persianDegits("3.2-")}} ٪<i class="ri-arrow-down-line"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <span class="bullet bg-success"></span>
+                <span>ارجاع</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDegits("432")}}</td>
+            <td class="text-end text-success">
+              {{persianDegits("+8.5")}} ٪<i class="ri-arrow-up-line"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <span class="bullet bg-danger"></span>
+                <span>ترافیک مستقیم</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDegits("390")}}</td>
+            <td class="text-end text-success">
+              {{persianDegits("+5.1")}} ٪<i class="ri-arrow-up-line"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

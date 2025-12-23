@@ -1,0 +1,55 @@
+<div class="card-body pt-15">
+  <div class="table-responsive table--card">
+    <table class="table table-bordered text-nowrap">
+      <thead>
+        <tr>
+          @for (item of tableHeaderNames; track $index) {
+          <th>{{ item }}</th>
+          }
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of tableData; track $index) {
+        <tr>
+          <td>{{ item.identity_number }}</td>
+          <td>
+            <div class="d-flex-items gap-10">
+              <div class="avatar avatar-xs radius-100">
+                <img
+                  alt="image not found"
+                  class="radius-100"
+                  [src]="item.company_src"
+                />
+              </div>
+              <h6>
+                <a href="#">{{ item.compnay_name }}</a>
+              </h6>
+            </div>
+          </td>
+          <td>{{ item.start_date }}</td>
+          <td>{{ item.fee }} تومان</td>
+          <td>
+            <span [class]="item.status_css_class">{{ item.status_name }}</span>
+          </td>
+          <td>
+            <div class="d-flex-items gap-10">
+              <div class="avatar avatar-xs radius-100">
+                <img
+                  alt="image not found"
+                  class="radius-100"
+                  [src]="item.sales_src"
+                />
+              </div>
+              <h6>{{ item.sales_name }}</h6>
+            </div>
+          </td>
+          <td>{{ item.end_data }}</td>
+          <td>
+            <app-action-buttons />
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

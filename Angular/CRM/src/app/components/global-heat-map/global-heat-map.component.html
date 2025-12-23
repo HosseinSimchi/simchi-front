@@ -1,0 +1,116 @@
+<div class="card">
+  <div class="card-header justify-between">
+    <h4 class="mb-0">نقشه گرمازدگی جهانی</h4>
+    <div id="map" style="height: 250px; width: 100%"></div>
+  </div>
+  <div class="card-body tableContainer pt-80">
+    <div id="salesWorldMap"></div>
+    <div class="table-responsive pt-15">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>کشور</th>
+            <th class="text-end">درآمد</th>
+            <th class="text-end">رشد</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <div class="avatar avatar-xs radius-100">
+                  <img
+                    alt="image not found"
+                    class="radius-100"
+                    src="assets/images/flags/palestine-flag.png"
+                  />
+                </div>
+                <span>فلسطین</span>
+              </div>
+            </td>
+            <td class="text-end fw-5">{{persianDigits("42.8")}} هزار تومان</td>
+            <td class="text-end">
+              <span class="text-success"
+                >{{persianDigits("+12.5")}} ٪<i class="ri-arrow-up-line"></i
+              ></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <div class="avatar avatar-xs radius-100">
+                  <img
+                    alt="image not found"
+                    class="radius-100"
+                    src="assets/images/flags/us-flag.jpg"
+                  />
+                </div>
+                <span>ایالات متحده</span>
+              </div>
+            </td>
+            <td class="text-end fw-5">{{persianDigits("28.4")}} هزار تومان</td>
+            <td class="text-end">
+              <span class="text-success"
+                >{{persianDigits("+8.5")}} ٪<i class="ri-arrow-up-line"></i
+              ></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <div class="avatar avatar-xs radius-100">
+                  <img
+                    alt="image not found"
+                    class="radius-100"
+                    src="assets/images/flags/brazil-flag.png"
+                  />
+                </div>
+                <span>برزیل</span>
+              </div>
+            </td>
+            <td class="text-end fw-5">{{persianDigits("19.7")}} هزار تومان</td>
+            <td class="text-end">
+              <span class="text-danger"
+                >{{persianDigits("2.1-")}} ٪<i class="ri-arrow-down-line"></i
+              ></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="d-flex align-center gap-10">
+                <div class="avatar avatar-xs radius-100">
+                  <img
+                    alt="image not found"
+                    class="radius-100"
+                    src="assets/images/flags/ireland-flag.png"
+                  />
+                </div>
+                <span>ایرلند</span>
+              </div>
+            </td>
+            <td class="text-end fw-500">{{persianDigits("15.2")}} هزار تومان</td>
+            <td class="text-end">
+              <span class="text-success"
+                >{{persianDigits("+5.7")}} ٪<i class="ri-arrow-up-line"></i
+              ></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex justify-between mt-10">
+      <div class="text-center">
+        <span class="d-block mb-5 fs-12 text-muted">کشورها</span>
+        <h3 class="fa">{{ persianDigits("30") }}</h3>
+      </div>
+      <div class="text-center">
+        <span class="d-block mb-5 fs-12 text-muted">مجموع</span>
+        <h3 class="fa">{{persianDigits("126.3")}} هزار تومان</h3>
+      </div>
+      <div class="text-center">
+        <span class="d-block mb-5 fs-12 text-muted">AVG/کشور</span>
+        <h3 class="fa">{{persianDigits("5.26")}} هزار تومان</h3>
+      </div>
+    </div>
+  </div>
+</div>

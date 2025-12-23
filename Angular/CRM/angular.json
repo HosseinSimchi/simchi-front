@@ -1,0 +1,166 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "crm": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/crm",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js", "@angular/localize/init"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/remixicon/fonts/remixicon.css",
+              "src/styles.scss",
+              "src/assets/css/vendor/bootstrap.min.rtl.css",
+              "src/assets/css/vendor/animate.css",
+              "src/assets/css/vendor/spacing.rtl.css",
+              "src/assets/css/vendor/magnific-popup.rtl.css",
+              "src/assets/css/plugins/simplebar.min.rtl.css",
+              "src/assets/css/plugins/waves.min.rtl.css",
+              "src/assets/css/plugins/nano.min.rtl.css",
+              "src/assets/css/plugins/line-awesome.min.css",
+              "src/assets/css/plugins/tabler-icons.css",
+              "src/assets/css/plugins/jsvectormap.min.rtl.css",
+              "src/assets/css/plugins/swiper.min.rtl.css",
+              "src/assets/css/main.rtl.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/js/vendor/jquery-3.7.0.js",
+
+              "src/assets/js/plugins/simplebar.min.js",
+              "src/assets/js/plugins/simplebar-active.js",
+
+              "src/assets/js/vendor/height-equal.js",
+              "src/assets/js/vendor/isotope.pkgd.js",
+              "src/assets/js/vendor/magnific-popup.min.js",
+              "src/assets/js/vendor/backtotop.js",
+              "src/assets/js/plugins/smooth-scrollbar.js",
+
+              "src/assets/js/plugins/apexcharts.min.js",
+              "src/assets/js/plugins/jsvectormap.min.js",
+              "src/assets/js/plugins/world-merc.js",
+              "src/assets/js/plugins/swiper.min.js",
+
+              "src/assets/js/vendor/ecommerce-dashboard.js",
+              "src/assets/js/main.js",
+              "src/assets/js/vendor/sidebar.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "crm:build:production"
+            },
+            "development": {
+              "buildTarget": "crm:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["src/styles.scss"],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
+  }
+}

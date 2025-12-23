@@ -1,0 +1,28 @@
+<div class="dropdown">
+  <a
+    aria-expanded="false"
+    class="dropdown-toggle"
+    data-bs-toggle="dropdown"
+    href="javascript:void(0);"
+    role="button"
+  >
+    <div class="author">
+      <div class="author-thumb">
+        <img alt="user" [src]="(this.userInfoState$ | async)?.scrPath" />
+      </div>
+      <h6 class="author-name lh-1">
+        {{ (this.userInfoState$ | async)?.name }}
+      </h6>
+    </div>
+  </a>
+  <ul class="dropdown-menu">
+    @for (item of (this.userInfoState$ | async)?.dropdownMenuItems; track
+    $index) {
+    <li class="bd-user-info-list">
+      <a [href]="item.hrefPath"
+        ><i [class]="item.iconClass"></i>{{ item.name }}</a
+      >
+    </li>
+    }
+  </ul>
+</div>

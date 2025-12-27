@@ -69,13 +69,21 @@
             </ul>
           </div>
         </div>
-        <div class="app-header-switcher app-header-circle">
+        <div
+          class="app-header-switcher app-header-circle"
+          (click)="toggleTheme()"
+        >
           <div class="theme-switcher">
-            <i class="ri-sun-line change-theme theme-button"></i>
+            <i
+              [class]="{
+                'ri-moon-line': (theme$ | async) === 'dark',
+                'ri-sun-line': (theme$ | async) === 'light'
+              }"
+            ></i>
           </div>
         </div>
         <div class="app-header-fullscreen app-header-circle cursor-pointer">
-          <div onclick="javascript:toggleFullScreen()">
+          <div (click)="toggleFullScreen()">
             <i class="ri-fullscreen-line"></i>
           </div>
         </div>

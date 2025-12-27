@@ -8,11 +8,12 @@ import { AppReducers } from './store/app.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { PostEffects } from './store/effect/app/app.effects';
+import { ThemeEffects } from './store/effect/theme/theme.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideStore(AppReducers),
-    provideEffects([PostEffects]),
+    provideEffects([PostEffects, ThemeEffects]),
     provideHttpClient(),
     provideRouter(routes),
     provideStoreDevtools({ maxAge: 25 }),

@@ -19,7 +19,7 @@
     @for (item of (this.userInfoState$ | async)?.dropdownMenuItems; track
     $index) {
     <li class="bd-user-info-list">
-      <a [href]="item.hrefPath"
+      <a [href]="'#'"
         ><i [class]="item.iconClass"></i>{{ item.name }}</a
       >
     </li>

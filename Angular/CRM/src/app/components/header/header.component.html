@@ -43,32 +43,6 @@
             <i class="ri-search-line"></i>
           </button>
         </div>
-        <div class="app-header-link">
-          <div class="dropdown">
-            <a
-              aria-expanded="false"
-              class="dropdown-toggle"
-              data-bs-toggle="dropdown"
-              href="javascript:void(0);"
-              role="button"
-            >
-              <span class="app-header-circle"
-                ><i class="ri-global-line"></i
-              ></span>
-            </a>
-            <ul class="dropdown-menu">
-              @for (item of this.languageSelection$ | async; track $index) {
-              <li>
-                <a class="dropdown-lang" href="javascript:void(0);"
-                  ><img alt="image not found" [src]="item.src" />{{
-                    item.name
-                  }}</a
-                >
-              </li>
-              }
-            </ul>
-          </div>
-        </div>
         <div
           class="app-header-switcher app-header-circle"
           (click)="toggleTheme()"

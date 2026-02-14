@@ -1,0 +1,30 @@
+export const fa = {
+  welcomeMessage: 'به برنامه ما خوش آمدید!',
+  userInfo: 'اطلاعات کاربر',
+  nameLabel: 'نام:',
+  greetingMessage: 'سلام، {{userName}}! روز خوبی داشته باشید.',
+  shoppingCart: 'سبد خرید',
+  itemCount: {
+    zero: 'سبد خرید شما خالی است',
+    one: 'شما یک آیتم در سبد خرید دارید',
+    other: 'شما {{count}} آیتم در سبد خرید دارید',
+  },
+  dateInfo: 'تاریخ و زمان',
+  currentDate: 'تاریخ فعلی: ',
+  currentTime: 'ساعت فعلی: ',
+  numbers: 'اعداد',
+  price: 'قیمت: ',
+  percentage: 'درصد: ',
+  languageSelector: 'انتخاب زبان:',
+  actions: {
+    save: 'ذخیره',
+    cancel: 'انصراف',
+    delete: 'حذف',
+  },
+  menu: {
+    home: 'خانه',
+    products: 'محصولات',
+    about: 'درباره ما',
+    contact: 'تماس با ما',
+  },
+};

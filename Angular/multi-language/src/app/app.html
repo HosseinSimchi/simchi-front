@@ -1,0 +1,89 @@
+<div class="container" [dir]="translationService.direction()">
+  <header class="header">
+    <h1>{{ 'welcomeMessage' | translate }}</h1>
+
+    <div class="language-selector">
+      <h3>{{ 'languageSelector' | translate }}</h3>
+      <div class="buttons">
+        <button
+          (click)="switchLanguage('en')"
+          [class.active]="translationService.currentLang === 'en'"
+        >
+          🇺🇸 English
+        </button>
+        <button
+          (click)="switchLanguage('fa')"
+          [class.active]="translationService.currentLang === 'fa'"
+        >
+          🇮🇷 فارسی
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="menu">
+    <a href="#">{{ 'menu.home' | translate }}</a>
+    <a href="#">{{ 'menu.products' | translate }}</a>
+    <a href="#">{{ 'menu.about' | translate }}</a>
+    <a href="#">{{ 'menu.contact' | translate }}</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>{{ 'userInfo' | translate }}</h2>
+
+      <div class="form-group">
+        <label>{{ 'nameLabel' | translate }}</label>
+        <input type="text" [value]="userName" (input)="updateName($event)" />
+      </div>
+
+      <p>{{ 'greetingMessage' | translate: { userName: userName } }}</p>
+    </section>
+
+    <section class="card">
+      <h2>{{ 'shoppingCart' | translate }}</h2>
+
+      <div class="item-count">
+        {{ 'itemCount' | translate: { count: items.length } }}
+      </div>
+
+      <ul *ngIf="items.length > 0" class="items-list">
+        <li *ngFor="let item of items">
+          {{ item }}
+        </li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn-primary">{{ 'actions.save' | translate }}</button>
+        <button class="btn-secondary">{{ 'actions.cancel' | translate }}</button>
+        <button class="btn-danger">{{ 'actions.delete' | translate }}</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>{{ 'dateInfo' | translate }}</h2>
+      <p>
+        {{ 'currentDate' | translate }}
+        {{
+          currentDate | date: (translationService.currentLang === 'fa' ? 'yyyy/MM/dd' : 'fullDate')
+        }}
+      </p>
+      <p>
+        {{ 'currentTime' | translate }}
+        {{ currentDate | date: (translationService.currentLang === 'fa' ? 'HH:mm' : 'shortTime') }}
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>{{ 'numbers' | translate }}</h2>
+      <p>
+        {{ 'price' | translate }}
+        {{ 1234567.89 }}
+      </p>
+      <p>
+        {{ 'percentage' | translate }}
+        {{ 0.756 }}
+      </p>
+    </section>
+  </main>
+</div>

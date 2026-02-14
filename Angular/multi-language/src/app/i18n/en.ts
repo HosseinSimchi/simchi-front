@@ -1,0 +1,30 @@
+export const en = {
+  welcomeMessage: 'Welcome to our application!',
+  userInfo: 'User Information',
+  nameLabel: 'Name:',
+  greetingMessage: 'Hello, {{userName}}! Have a nice day.',
+  shoppingCart: 'Shopping Cart',
+  itemCount: {
+    zero: 'Your cart is empty',
+    one: 'You have one item in your cart',
+    other: 'You have {{count}} items in your cart',
+  },
+  dateInfo: 'Date and Time',
+  currentDate: 'Current date: ',
+  currentTime: 'Current time: ',
+  numbers: 'Numbers',
+  price: 'Price: ',
+  percentage: 'Percentage: ',
+  languageSelector: 'Select Language:',
+  actions: {
+    save: 'Save',
+    cancel: 'Cancel',
+    delete: 'Delete',
+  },
+  menu: {
+    home: 'Home',
+    products: 'Products',
+    about: 'About',
+    contact: 'Contact',
+  },
+};

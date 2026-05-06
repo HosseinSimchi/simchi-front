@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      typography: (
+        plain-family: 'IRANSans',
+        brand-family: 'IRANSans',
+      ),
+      density: 0,
+    )
+  );
+
+  // Dark theme
+  &.dark {
+    color-scheme: dark;
+
+    @include mat.theme(
+      (
+        typography: (
+          plain-family: 'IRANSans',
+          brand-family: 'IRANSans',
+        ),
+        density: 0,
+      )
+    );
+  }
+}

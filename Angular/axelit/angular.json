@@ -26,7 +26,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/shared/styles/customize_theme.scss",
+              "src/shared/styles/material-theme.scss",
+              "src/styles.scss"
             ]
           },
           "configurations": {

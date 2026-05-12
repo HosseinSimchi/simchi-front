@@ -6,7 +6,7 @@ import { application_routes } from '../shared/helpers/routes';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: application_routes.AUTH, // Redirect to the login page by default
+    redirectTo: application_routes.APP, // Redirect to the login page by default
     pathMatch: 'full',
   },
   {
@@ -27,7 +27,7 @@ export const routes: Routes = [
   {
     path: application_routes.APP,
     loadComponent: () => import('../app/app').then((c) => c.App),
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
     children: ApplicationRoutes,
   },
   // {

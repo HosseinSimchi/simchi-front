@@ -1,9 +1,9 @@
 export const application_routes = {
-  MAIN_ROOT: 'saman',
+  MAIN_ROOT: 'bank',
   AUTH: 'auth',
   AUTH_PHONE_CODE: 'auth-otp',
   AUTH_PHONE_NUMBER: 'auth-phone-number',
-  APP: 'saman',
+  APP: 'bank',
   LAYOUT: 'layout',
   DASHBOARD: 'dashboard',
   INVOICE_AND_PAYMENT: 'payment',

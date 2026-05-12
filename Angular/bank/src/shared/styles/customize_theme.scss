@@ -44,72 +44,19 @@
   --color-primary-4-900: #68242f;
 
   // Font Family
-  --font-iransans: 'inter';
-  //TODO:
+  --font-inter: 'inter';
+
   //font-size, weight, height
-  --text-display-xxxl: 72px;
-  --text-display-xxxl--line-height: 113px;
-  --text-display-xxl: 64px;
-  --text-display-xxl--line-height: 100px;
-  --text-display-xl: 48px;
-  --text-display-xl--line-height: 75px;
+  --text-heading-one: 28px;
+  --text-heading-two: 22px;
+  --text-heading-three: 18px;
+  --text-heading-four: 20px;
+  --text-body-one: 16px;
+  --text-body-two: 15px;
+  --text-body-small: 13px;
+  --text-botton-medium: 18px;
+  --text-botton-medium_2: 15px;
 
-  --text-heading-xl: 32px;
-  --text-heading-xl--line-height: 50px;
-  --text-heading-lg: 24px;
-  --text-heading-lg--line-height: 38px;
-  --text-heading-md: 20px;
-  --text-heading-md--line-height: 31px;
-
-  --text-subtitle-lg: 18px;
-  --text-subtitle-lg--line-height: 28px;
-  --text-subtitle-md: 16px;
-  --text-subtitle-md--line-height: 25px;
-
-  --text-title-lg: 14px;
-  --text-title-lg--line-height: 22px;
-  --text-title-md: 12px;
-  --text-title-md--line-height: 19px;
-
-  --text-body-lg: 18px;
-  --text-body-lg--line-height: 28px;
-  --text-body-md: 16px;
-  --text-body-md--line-height: 25px;
-  --text-body-sm: 14px;
-  --text-body-sm--line-height: 22px;
-
-  --text-caption-xs: 12px;
-  --text-caption-xs--line-height: 19px;
-  --text-caption-xxs: 10px;
-  --text-caption-xxs--line-height: 16px;
-
-  --text-btn-text: 16px;
-  --text-btn-text--line-height: 25px;
-  --text-btn-label: 14px;
-  --text-btn-label--line-height: 22px;
-
-  --text-input-text: 16px;
-  --text-input-text--line-height: 25px;
-  --text-input-label: 14px;
-  --text-input-label--line-height: 22px;
-
-  --text-table-header: 14px;
-  --text-table-header--line-height: 22px;
-  --text-table-cell: 14px;
-  --text-table-cell--line-height: 22px;
-
-  --text-faNumber-xxl: 48px;
-  --text-faNumber-xxl--line-height: 75px;
-  --text-faNumber-xl: 32px;
-  --text-faNumber-xl--line-height: 50px;
-  --text-faNumber-lg: 24px;
-  --text-faNumber-lg--line-height: 38px;
-  --text-faNumber-md: 18px;
-  --text-faNumber-md--line-height: 28px;
-  --text-faNumber-smd: 16px;
-  --text-faNumber-smd--line-height: 25px;
-  --text-faNumber-xs: 14px;
-  --text-faNumber-xs--line-height: 22px;
-  --text-faNumber-xxs: 12px;
-  --text-faNumber-xxs--line-height: 19px;
+  //Padding, Margin
+  --spacing-156: 156px; // p-156
 }

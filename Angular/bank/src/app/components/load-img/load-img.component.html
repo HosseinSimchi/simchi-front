@@ -1,0 +1,9 @@
+<div
+  class="icon-navbar-mask transition-all duration-800 ease-out cursor-pointer"
+  [class]="givenCssClass()"
+  (click)="isIconClicked()"
+  onKeyPress="undefined"
+  [style]="
+    `--icon-mask: url(&quot;${image_path()}${givenLogicImgLoader()}.${image_format()}&quot;)`
+  "
+></div>

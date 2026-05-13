@@ -1,5 +1,19 @@
 <!-- Inside bank-navbar component -->
 <div class="grid-2-columns">
-  <div class="w-full">01</div>
-  <div class="w-full">02</div>
+  <div class="col-span-2 mb-(--margin-logo)">
+    <img [src]="LOGO_IMG_URL" [class]="'rounded-full'" alt="imgLogo" />
+  </div>
+  @for (item of NAVBAR_ITEMS; track $index) {
+    <div class="col-span-2 pl-(--padding-navbar) mb-(--gap-items-navbar) cursor-pointer">
+      <div class="flex-start gap-(--icon-text-gap)">
+        <bank-load-img
+          [image_path]="'/images/navbar/icons/'"
+          [givenCssClass]="'w-(--icon-navbar-size) h-(--icon-navbar-size) inactive-navbar-icon'"
+          [image_format]="'svg'"
+          [givenLogicImgLoader]="item.icon"
+        />
+        <p class="inactive-navbar-text">{{ item.name }}</p>
+      </div>
+    </div>
+  }
 </div>

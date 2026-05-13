@@ -71,8 +71,13 @@
   }
 }
 
+// Design System
 .flex-center {
   @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-center;
 }
 
 .flex-col-center {
@@ -106,4 +111,11 @@
 .grid-2-columns {
   @apply grid grid-cols-2;
 }
- 
+
+// Navbar
+.inactive-navbar-icon {
+  @apply bg-primary-2-200 font-medium;
+}
+.inactive-navbar-text {
+  @apply text-primary-2-200 mt-1 text-heading-three font-medium;
+}

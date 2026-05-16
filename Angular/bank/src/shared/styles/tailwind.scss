@@ -71,7 +71,7 @@
   }
 }
 
-// Design System
+//=========================================== Design System =====================================
 .flex-center {
   @apply flex justify-center items-center;
 }
@@ -112,10 +112,21 @@
   @apply grid grid-cols-2;
 }
 
-// Navbar
-.inactive-navbar-icon {
-  @apply bg-primary-2-200 font-medium;
+//========================================================= Navbar =========================================
+.nav-items {
+  @apply col-span-2;
+  @apply pl-(--padding-left-44);
+  @apply mb-(--margin-bottom-39);
+  @apply cursor-pointer;
 }
+
+.inactive-navbar-icon {
+  @apply w-(--size-25) h-(--size-25);
+  @apply bg-primary-2-200;
+  @apply font-medium;
+}
+
 .inactive-navbar-text {
-  @apply text-primary-2-200 mt-1 text-heading-three font-medium;
+  @apply text-primary-2-100 text-heading-three font-medium;
+  @apply mt-1;
 }

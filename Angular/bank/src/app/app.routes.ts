@@ -13,60 +13,42 @@ export const ApplicationRoutes: Routes = [
       },
       {
         path: application_routes.DASHBOARD,
-        loadComponent: () =>
-          import('./pages/dashboard/dashboard').then(
-            (m) => m.Dashboard,
-          ),
+        loadComponent: () => import('./pages/dashboard/dashboard').then((m) => m.Dashboard),
       },
-      // {
-      //   path: application_routes.INVOICE_AND_PAYMENT,
-      //   loadComponent: () =>
-      //     import('./pages/invoice-and-payment/invoice-and-payment.component').then(
-      //       (m) => m.InvoiceAndPaymentComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.ENERGY_PACKAGES,
-      //   loadComponent: () =>
-      //     import('./pages/energy-packages/energy-packages.component').then(
-      //       (m) => m.EnergyPackagesComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.SERVICE_REQUEST,
-      //   loadComponent: () =>
-      //     import('./pages/service-request/service-request.component').then(
-      //       (m) => m.ServiceRequestComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.WALLET,
-      //   loadComponent: () =>
-      //     import('./pages/wallet/wallet.component').then(
-      //       (m) => m.WalletComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.CAMPAIGN,
-      //   loadComponent: () =>
-      //     import('./pages/campaign/campaign.component').then(
-      //       (m) => m.CampaignComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.METERS_MANAGEMENT,
-      //   loadComponent: () =>
-      //     import('./pages/meters-management/meters-management.component').then(
-      //       (m) => m.MetersManagementComponent,
-      //     ),
-      // },
-      // {
-      //   path: application_routes.USER_ACCOUNT,
-      //   loadComponent: () =>
-      //     import('./pages/user-account/user-account.component').then(
-      //       (m) => m.UserAccountComponent,
-      //     ),
-      // },
+      {
+        path: application_routes.TRANSACTIONS,
+        loadComponent: () =>
+          import('./pages/transactions/transactions').then((m) => m.Transactions),
+      },
+      {
+        path: application_routes.ACCOUNTS,
+        loadComponent: () => import('./pages/accounts/accounts').then((m) => m.Accounts),
+      },
+      {
+        path: application_routes.INVESTMENTS,
+        loadComponent: () => import('./pages/investments/investments').then((m) => m.Investments),
+      },
+      {
+        path: application_routes.CREDIT_CARDS,
+        loadComponent: () => import('./pages/credit-cards/credit-cards').then((m) => m.CreditCards),
+      },
+      {
+        path: application_routes.LOANS,
+        loadComponent: () => import('./pages/loans/loans').then((m) => m.Loans),
+      },
+      {
+        path: application_routes.SERVICES,
+        loadComponent: () => import('./pages/services/services').then((m) => m.Services),
+      },
+      {
+        path: application_routes.MY_PRIVILAGES,
+        loadComponent: () =>
+          import('./pages/my-privilages/my-privilages').then((m) => m.MyPrivilages),
+      },
+      {
+        path: application_routes.SETTINGS,
+        loadComponent: () => import('./pages/settings/settings').then((m) => m.Settings),
+      },
     ],
   },
 ];

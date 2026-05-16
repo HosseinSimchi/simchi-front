@@ -1,14 +1,20 @@
 <!-- Inside bank-navbar component -->
 <div class="grid-2-columns">
-  <div class="col-span-2 mb-(--margin-logo)">
+  <div class="col-span-2 mb-(--margin-bottom-33) pl-(--padding-left-38)">
     <img [src]="LOGO_IMG_URL" [class]="'rounded-full'" alt="imgLogo" />
   </div>
   @for (item of NAVBAR_ITEMS; track $index) {
-    <div class="col-span-2 pl-(--padding-navbar) mb-(--gap-items-navbar) cursor-pointer">
-      <div class="flex-start gap-(--icon-text-gap)">
+    <div
+      class="nav-items"
+      (click)="item.path === App_Routes.AUTH ? navigateWithReplace(item.path) : null"
+      [routerLink]="item.path !== App_Routes.AUTH ? item.path : null"
+      routerLinkActive="activeLink"
+      [routerLinkActiveOptions]="{ exact: true, paths: 'exact' }"
+    >
+      <div class="flex-start gap-(--gap-26)">
         <bank-load-img
           [image_path]="'/images/navbar/icons/'"
-          [givenCssClass]="'w-(--icon-navbar-size) h-(--icon-navbar-size) inactive-navbar-icon'"
+          [givenCssClass]="'inactive-navbar-icon'"
           [image_format]="'svg'"
           [givenLogicImgLoader]="item.icon"
         />

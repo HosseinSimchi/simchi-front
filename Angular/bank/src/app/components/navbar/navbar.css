@@ -1,0 +1,34 @@
+@reference "tailwindcss";
+
+/* Container styling */
+:host {
+  display: block;
+  height: 100%;
+}
+.activeLink {
+  position: relative;
+}
+
+.activeLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: var(--color-primary-3-500);
+  border-radius: 0 20px 20px 0;
+}
+
+/* Active link text */
+.activeLink .inactive-navbar-text {
+  color: var(--color-primary-3-500);
+  font-size: var(--text-heading-three);
+  font-weight: bold;
+}
+
+/* Active link icon */
+:host ::ng-deep .activeLink .inactive-navbar-icon {
+  background-color: var(--color-primary-3-700);
+  transition: background-color 0.2s ease;
+}

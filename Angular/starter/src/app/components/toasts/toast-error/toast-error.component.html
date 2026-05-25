@@ -1,0 +1,23 @@
+<div class="flex justify-center items-center mt-6">
+  <div
+    class="w-max-content h-46 bg-error-50 flex justify-center items-center py-3 px-2 rounded-2 border border-error-500"
+  >
+    <div class="flex justify-start items-center w-full gap-2">
+      <saman-load-img
+        [image_path]="'/images/toast/icons/'"
+        [givenCssClass]="'toast-error-close-icon'"
+        [image_format]="'svg'"
+        [givenLogicImgLoader]="'close'"
+      />
+      <p class="text-error-500 text-btn-label font-medium">
+        بسته انتخابی شما ثبت نشد دوباره امتحان کنید
+      </p>
+      <saman-load-img
+        [image_path]="'/images/toast/icons/'"
+        [givenCssClass]="'toast-error-close-icon'"
+        [image_format]="'svg'"
+        [givenLogicImgLoader]="'x-mark'"
+      />
+    </div>
+  </div>
+</div>

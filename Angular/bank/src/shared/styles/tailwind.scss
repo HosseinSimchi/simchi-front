@@ -60,6 +60,16 @@
   --text-body-small: var(--text-body-small);
   --text-botton-medium: var(--text-botton-medium);
   --text-botton-medium_2: var(--text-botton-medium_2);
+
+  //Spacing
+  --spacing-11: 44px;
+  --spacing-25: 25px;
+  --spacing-26: 26px;
+  --spacing-31: 31px;
+  --spacing-33: 33px;
+  --spacing-38: 38px;
+  --spacing-39: 39px;
+  --spacing-100: 100px;
 }
 
 @layer utilities {
@@ -71,62 +81,42 @@
   }
 }
 
-//=========================================== Design System =====================================
-.flex-center {
-  @apply flex justify-center items-center;
-}
-
-.flex-start {
-  @apply flex justify-start items-center;
-}
-
-.flex-col-center {
-  @apply flex flex-col justify-center items-center;
-}
-
-.grid-12-columns {
+//========================================================= Layout Compoennt =========================================
+.layout-layout {
   @apply grid grid-cols-12;
+  @apply overflow-hidden;
 }
 
-.grid-10-columns {
-  @apply grid grid-cols-10;
-}
-
-.grid-8-columns {
-  @apply grid grid-cols-8;
-}
-
-.grid-6-columns {
-  @apply grid grid-cols-6;
-}
-
-.grid-4-columns {
-  @apply grid grid-cols-4;
-}
-
-.grid-3-columns {
-  @apply grid grid-cols-3;
-}
-
-.grid-2-columns {
-  @apply grid grid-cols-2;
-}
-
-//========================================================= Navbar =========================================
-.nav-items {
+.layout-navbar-layout {
   @apply col-span-2;
-  @apply pl-(--padding-left-44);
-  @apply mb-(--margin-bottom-39);
+  @apply mt-31;
+}
+
+.layout-main-content-layout {
+  @apply col-span-10;
+}
+//========================================================= Navbar Component =========================================
+.navbar-layout {
+  @apply grid grid-cols-2 gap-0;
+}
+.navbar-items-layout {
+  @apply col-span-2;
+  @apply pl-11;
+  @apply mb-39;
   @apply cursor-pointer;
 }
 
-.inactive-navbar-icon {
-  @apply w-(--size-25) h-(--size-25);
+.navbar-items {
+  @apply flex justify-start gap-26;
+}
+
+.navbar-inactive-icon {
+  @apply w-25 h-25;
   @apply bg-primary-2-200;
   @apply font-medium;
 }
 
-.inactive-navbar-text {
+.navbar-inactive-text {
   @apply text-primary-2-100 text-heading-three font-medium;
   @apply mt-1;
 }

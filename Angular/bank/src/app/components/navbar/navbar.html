@@ -1,24 +1,20 @@
-<!-- Inside bank-navbar component -->
-<div class="grid-2-columns">
-  <div class="col-span-2 mb-(--margin-bottom-33) pl-(--padding-left-38)">
-    <img [src]="LOGO_IMG_URL" [class]="'rounded-full'" alt="imgLogo" />
-  </div>
+<div class="navbar-layout">
   @for (item of NAVBAR_ITEMS; track $index) {
     <div
-      class="nav-items"
+      class="navbar-items-layout"
       (click)="item.path === App_Routes.AUTH ? navigateWithReplace(item.path) : null"
       [routerLink]="item.path !== App_Routes.AUTH ? item.path : null"
       routerLinkActive="activeLink"
       [routerLinkActiveOptions]="{ exact: true, paths: 'exact' }"
     >
-      <div class="flex-start gap-(--gap-26)">
+      <div class="navbar-items">
         <bank-load-img
           [image_path]="'/images/navbar/icons/'"
-          [givenCssClass]="'inactive-navbar-icon'"
+          [givenCssClass]="'navbar-inactive-icon'"
           [image_format]="'svg'"
           [givenLogicImgLoader]="item.icon"
         />
-        <p class="inactive-navbar-text">{{ item.name }}</p>
+        <p class="navbar-inactive-text">{{ item.name }}</p>
       </div>
     </div>
   }

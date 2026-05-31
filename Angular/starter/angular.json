@@ -7,12 +7,12 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "axelit": {
+    "starter": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "bank",
+      "prefix": "starter",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "axelit:build:production"
+              "buildTarget": "starter:build:production"
             },
             "development": {
-              "buildTarget": "axelit:build:development"
+              "buildTarget": "starter:build:development"
             }
           },
           "defaultConfiguration": "development"

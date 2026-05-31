@@ -7,12 +7,12 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "axelit": {
+    "simchi-docs": {
       "projectType": "application",
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "bank",
+      "prefix": "simchi-docs",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -26,7 +26,6 @@
               }
             ],
             "styles": [
-              "node_modules/prismjs/themes/prism.css",
               "src/shared/styles/customize_theme.scss",
               "src/shared/styles/material-theme.scss",
               "src/styles.scss"
@@ -60,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "axelit:build:production"
+              "buildTarget": "simchi-docs:build:production"
             },
             "development": {
-              "buildTarget": "axelit:build:development"
+              "buildTarget": "simchi-docs:build:development"
             }
           },
           "defaultConfiguration": "development"

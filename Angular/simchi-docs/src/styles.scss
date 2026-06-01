@@ -1,3 +1,27 @@
 @import './shared/styles/global-app.scss';
 @import './shared/styles/material-theme.scss'; /* Remove underscore */
 @import './shared/styles/tailwind.scss'; /* Remove underscore */
+
+/* Position the copy button */
+.markdown-clipboard-toolbar {
+  position: relative;
+}
+
+/* Style the copy button */
+.markdown-clipboard-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Style the "copied" state */
+.markdown-clipboard-button.copied {
+  background: #10b981;
+}

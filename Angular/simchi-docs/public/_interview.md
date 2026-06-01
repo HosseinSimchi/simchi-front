@@ -1,0 +1,253 @@
+##### Junior Level
+
+- ###### یادگیری ماشین چیست؟
+  - ###### یادگیری ماشین شاخه‌ای از هوش مصنوعی است که به سیستم‌ها اجازه می‌دهد بدون برنامه‌نویسی صریح، از داده‌ها الگو یاد بگیرند و تصمیم بگیرند.
+- ###### تفاوت AI، Machine Learning و Deep Learning چیست؟
+  - ###### AI: مفهوم کلی هوشمندی ماشین
+  - ###### ML: زیرمجموعه AI که از داده یاد می‌گیرد
+  - ###### DL: زیرمجموعه ML مبتنی بر شبکه‌های عصبی عمیق
+- ###### انواع یادگیری ماشین را نام ببرید.
+  - ###### یادگیری نظارت‌شده (Supervised)
+    - ###### در این روش داده‌ها دارای برچسب (label) هستند و مدل یاد می‌گیرد ورودی را به خروجی درست نگاشت کند.
+    - ###### Ex -- تشخیص اسپم ایمیل با برچسب spam / not spam
+  - ###### بدون نظارت (Unsupervised)
+    - ###### در این روش داده‌ها بدون برچسب هستند و مدل به دنبال الگوها و ساختارهای پنهان می‌گردد.
+    - ###### Ex -- خوشه‌بندی مشتریان بر اساس رفتار خرید
+  - ###### نیمه‌نظارتی
+  - ###### تقویتی (Reinforcement Learning)
+    - ###### مدل با تعامل با محیط و دریافت پاداش یا جریمه یاد می‌گیرد.
+- ###### Feature چیست؟
+  - ###### ویژگی یا متغیری که به عنوان ورودی به مدل داده می‌شود.
+- ###### Validation چیست؟
+  - ###### داده‌ای برای تنظیم پارامترهای مدل بدون دیدن داده تست.
+- ###### Overfitting
+  - ###### مدل داده‌های آموزش را حفظ کرده ولی روی داده جدید عملکرد ضعیفی دارد.
+- ###### Underfitting
+  - ###### مدل بیش از حد ساده است و الگوهای داده را یاد نمی‌گیرد
+- ###### چرا جبر خطی در ML مهم است؟
+  - ###### زیرا داده‌ها و مدل‌ها به صورت بردار و ماتریس نمایش داده می‌شوند.
+- ###### ضرب ماتریس‌ها چه کاربردی دارد؟
+  - ###### در محاسبات مدل‌ها و شبکه‌های عصبی.
+- ###### مشتق چه کاربردی در ML دارد؟
+  - ###### برای بهینه‌سازی و کمینه‌کردن خطا.
+- ###### Gradient Descent چیست؟
+  - ###### الگوریتمی برای پیدا کردن کمینه تابع خطا.
+- ###### Learning Rate چیست؟
+  - ###### اندازه گام در به‌روزرسانی پارامترها.
+- ###### اگر learning rate خیلی بزرگ باشد چه می‌شود؟
+  - ###### ممکن است مدل همگرا نشود.
+- ###### تابع هزینه (Loss Function) چیست؟
+  - ###### میزان خطای پیش‌بینی مدل را اندازه‌گیری می‌کند.
+- ###### احتمال در ML چه نقشی دارد؟
+  - ###### برای مدل‌سازی عدم قطعیت و پیش‌بینی.
+- ###### واریانس چیست؟
+  - ###### میزان پراکندگی داده‌ها.
+- ###### Bias: خطای مدل ساده
+- ###### Variance: حساسیت زیاد به داده
+- ###### رگرسیون خطی چیست؟
+  - ###### مدلی برای پیش‌بینی مقادیر عددی پیوسته.
+- ###### رگرسیون لجستیک چیست؟
+  - ###### مدلی برای دسته‌بندی دودویی.
+- ###### KNN چگونه کار می‌کند؟
+  - ###### با توجه به نزدیک‌ترین همسایه‌ها تصمیم می‌گیرد.
+  - ###### مزیت KNN چیست؟
+    - ###### ساده و بدون آموزش پیچیده.
+  - ###### عیب KNN چیست؟
+    - ###### کندی در داده‌های بزرگ.
+- ###### Decision Tree چیست؟
+  - ###### مدلی مبتنی بر قوانین if-else.
+  - ###### مزیت Decision Tree؟
+    - ###### قابل تفسیر بودن.
+- ###### Random Forest چیست؟
+  - ###### مجموعه‌ای از چندین Decision Tree.
+  - ###### مزیت Random Forest؟
+    - ###### کاهش overfitting.
+- ###### SVM چیست؟
+  - ###### الگوریتمی برای پیدا کردن بهترین مرز جداسازی.
+  - ###### Kernel در SVM چیست؟
+    - ###### تابعی برای تبدیل داده به فضای بالاتر.
+- ###### Naive Bayes چیست؟
+  - ###### مدلی احتمالاتی مبتنی بر قضیه بیز.
+  - ###### چرا Naive Bayes سریع است؟
+    - ###### به دلیل فرض استقلال ویژگی‌ها.
+- ###### Clustering
+  - ###### گروه‌بندی داده‌های مشابه.
+  - ###### K-Means چیست؟
+    - ###### الگوریتم خوشه‌بندی مبتنی بر centroid.
+    - ###### مشکل K-Means چیست؟
+      - ###### نیاز به تعیین تعداد خوشه‌ها.
+    - ###### Elbow Method چیست؟
+      - ###### روشی برای انتخاب K مناسب.
+- ###### PCA چیست؟
+  - ###### کاهش ابعاد داده.
+  - ###### چرا کاهش ابعاد مهم است؟
+    - ###### کاهش نویز و افزایش سرعت.
+- ###### Anomaly Detection چیست؟
+  - ###### تشخیص داده‌های غیرعادی.
+- ###### Ensemble Learning چیست؟
+  - ###### ترکیب چند مدل برای نتیجه بهتر.
+- ###### Data Leakage چیست؟
+  - ###### استفاده ناخواسته از اطلاعات آینده.
+- ###### Model Drift چیست؟
+  - ###### تغییر توزیع داده در زمان
+
+##### Midd Level
+
+- ###### اگر دیتاست شما 100 میلیون رکورد داشته باشد، چگونه preprocessing را مدیریت می‌کنید؟
+  - ###### پردازش batch یا chunk-based
+  - ###### استفاده از Dask / Spark
+  - ###### حذف عملیات in-memory
+  - ###### Feature engineering مرحله‌ای
+  - ###### ذخیره intermediate results (Parquet)
+- ###### چگونه تشخیص می‌دهید که یک feature باعث leakage شده است؟
+  - ###### عملکرد غیرواقعی بالا روی validation
+  - ###### وابستگی feature به زمان آینده
+  - ###### بررسی correlation feature با target بعد از split زمانی
+  - ###### حذف feature و مقایسه performance
+- ###### در پروژه واقعی چه زمانی feature را حذف می‌کنید؟
+  - ###### correlation بالا با feature دیگر
+  - ###### اهمیت پایین در model interpretability
+  - ###### هزینه بالای محاسبه در inference
+  - ###### ایجاد leakage یا instability
+- ###### اگر داده‌ها noisy باشند چه می‌کنید؟
+  - ###### smoothing
+  - ###### robust scaling
+  - ###### حذف outlierها (IQR / Z-score)
+  - ###### استفاده از مدل‌های مقاوم (tree-based)
+- ###### چگونه outlier را بدون حذف داده مدیریت می‌کنید؟
+  - ###### clipping
+  - ###### log transformation
+  - ###### robust loss functions
+  - ###### tree-based models
+- ###### . تفاوت handling missing values در train و inference چیست؟
+  - ###### در inference نباید
+    - ###### از اطلاعات آینده استفاده شود
+    - ###### stat جدید محاسبه شود
+      - ###### باید از statistics ذخیره‌شده train استفاده کرد.
+- ###### . اگر distribution داده train و production متفاوت باشد چه می‌کنید؟
+  - ###### monitoring drift
+  - ###### retraining دوره‌ای
+  - ###### domain adaptation
+  - ###### feature normalization مجدد
+- ###### چگونه feature engineering را version می‌کنید؟
+  - ###### ذخیره code featureها
+  - ###### hash کردن feature pipeline
+  - ###### استفاده از Feature Store
+  - ###### tagging dataset version
+- ###### چرا datetime feature خطرناک است؟
+  - ###### leakage زمانی ایجاد می‌کند
+  - ###### مدل الگوی غلط یاد می‌گیرد
+  - ###### باید به اجزای meaningful تبدیل شود (hour, weekday)
+- ###### چه زمانی categorical encoding را داخل pipeline قرار می‌دهید؟
+  - ###### همیشه — برای جلوگیری از train/inference mismatch
+- ###### چگونه تشخیص می‌دهید مدل underperform است یا داده؟
+  - ###### تست مدل‌های مختلف
+  - ###### learning curve
+  - ###### بررسی noise داده
+  - ###### sanity check با مدل ساده
+- ###### چرا گاهی مدل ساده بهتر از مدل پیچیده عمل می‌کند؟
+  - ###### داده کم
+  - ###### noise بالا
+  - ###### overfitting مدل پیچیده
+  - ###### bias مناسب‌تر مدل ساده
+- ###### Early Stopping را بر اساس چه metricی تنظیم می‌کنید؟
+  - ###### بر اساس metric بیزنسی، نه صرفاً loss
+- ###### چرا loss کاهش می‌یابد اما metric بهتر نمی‌شود؟
+  - ###### mismatch بین loss و metric
+  - ###### class imbalance
+  - ###### threshold نامناسب
+  - ###### over-optimization روی loss
+- ###### چرا reproducibility در پروژه ML سخت است؟
+  - ###### randomness
+  - ###### parallelism
+  - ###### nondeterministic GPU ops
+  - ###### تغییر داده
+- ###### چه چیزهایی باید seed شوند؟
+  - ###### numpy, random, framework (PyTorch / TF), dataloader
+- ###### اگر training ناپایدار باشد چه بررسی می‌کنید؟
+  - ###### learning rate, exploding gradients, data normalization, batch size
+- ###### چگونه hyperparameter tuning را در scale انجام می‌دهید؟
+  - ###### Random Search, Bayesian Optimization, early pruning, parallel runs
+- ###### چرا accuracy معیار خوبی نیست؟
+  - ###### در dataset نامتوازن گمراه‌کننده است
+- ###### چگونه threshold مناسب classification را انتخاب می‌کنید؟
+  - ###### ROC, Precision-Recall curve, هزینه خطاهای FP/FN, metric بیزنسی
+- ###### چگونه یک مدل بد را debug می‌کنید؟
+  - ###### بررسی نمونه‌های اشتباه
+  - ###### تحلیل confusion matrix
+  - ###### feature importance
+  - ###### visualization داده
+- ###### چرا cross-validation همیشه خوب نیست؟
+  - ###### داده زمانی
+  - ###### هزینه محاسباتی
+  - ###### leakage زمانی
+- ###### چگونه metric بیزنسی را به ML metric تبدیل می‌کنید؟
+  - ###### تعریف cost function مبتنی بر سود/ضرر
+- ###### چرا مدل روی validation خوب ولی روی production بد است؟
+  - ###### data drift, overfitting validation, leakage, skew در real data
+- ###### چگونه confidence prediction را اندازه می‌گیرید؟
+  - ###### probability calibration
+  - ###### entropy
+  - ###### ensemble variance
+- ###### Calibration
+  - ###### همخوانی احتمال خروجی مدل با واقعیت
+- ###### چگونه مدل را explain می‌کنید؟
+  - ###### SHAP, LIME, feature importance, partial dependence
+- ###### چرا explainability در production مهم است؟
+  - ###### اعتماد
+  - ###### debug
+  - ###### compliance
+  - ###### fairness
+- ###### Pipeline ML production شامل چه مراحلی است؟
+  - ###### Data → Feature → Model → Validation → Deploy → Monitor
+- ###### Batch vs Online inference؟
+  - ###### Batch: ارزان، کند
+  - ###### Online: سریع، گران
+- ###### چگونه latency inference را کاهش می‌دهید؟
+  - ###### model compression, quantization, caching, batching
+- ###### Model versioning چرا مهم است؟
+  - ###### rollback
+  - ###### reproducibility
+  - ###### debugging
+- ###### Canary deployment چیست؟
+  - ###### انتشار تدریجی مدل روی بخشی از کاربران
+- ###### A/B testing مدل‌ها چگونه انجام می‌شود؟
+  - ###### تقسیم کاربران و مقایسه metric بیزنسی
+- ###### Model rollback چه زمانی ضروری است؟
+  - ###### افت metric
+  - ###### drift شدید
+  - ###### bug در inference
+- ###### Monitoring چه چیزهایی را شامل می‌شود؟
+  - ###### data drift
+  - ###### prediction distribution
+  - ###### latency
+  - ###### business KPIs
+- ###### Feature Store چه مشکلی را حل می‌کند؟
+  - ###### consistency بین train و inference
+- ###### چه زمانی Deep Learning انتخاب اشتباه است؟
+  - ###### داده کم
+  - ###### latency حساس
+  - ###### explainability مهم
+  - ###### منابع محدود
+- ###### چگونه trade-off accuracy و latency را مدیریت می‌کنید؟
+  - ###### با metric ترکیبی و profiling
+- ###### چرا metric خوب همیشه مدل خوب نیست؟
+  - ###### عدم تطابق با هدف بیزنسی
+- ###### چه زمانی ensemble خطرناک است؟
+  - ###### latency بالا
+  - ###### پیچیدگی deployment
+  - ###### هزینه inference
+- ###### اگر داده برچسب‌دار کم باشد چه می‌کنید؟
+  - ###### semi-supervised, weak supervision, transfer learning
+- ###### چگونه fairness مدل را بررسی می‌کنید؟
+  - ###### metric جداگانه برای گروه‌ها
+- ###### چه زمانی retraining انجام می‌دهید؟
+  - ###### drift
+  - ###### افت KPI
+  - ###### تغییر بیزنس
+- ###### چگونه ML debt ایجاد می‌شود؟
+  - ###### pipeline پیچیده
+  - ###### lack of monitoring
+  - ###### hackهای موقتی
+- ###### تفاوت Research ML و Production ML؟
+  - ###### Production = reliability + scalability + monitoring

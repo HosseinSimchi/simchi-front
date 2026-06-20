@@ -1,2 +1,29 @@
-<p>layout works!</p>
-<router-outlet></router-outlet>
+<div class="overflow-hidden h-screen w-screen">
+  <div class="grid grid-cols-12 h-full">
+    <!-- Navbar -->
+    <div class="col-span-full border-b border-[#CBD5E1] max-h-max">
+      <simchi-docs-header />
+    </div>
+
+    <div
+      class="h-full gap-y-1 p-(--padding-8) px-[30px]"
+      [class]="isSidebarOpen ? 'col-span-2' : 'col-span-1'"
+    >
+      <!-- <saman-navbar
+        [(isOpen)]="isSidebarOpen"
+        (isOpenChange)="onSidebarToggle($event)"
+      /> -->
+    </div>
+
+    <!-- Main Content -->
+    <div
+      [class]="isSidebarOpen ? 'col-span-10' : 'col-span-11'"
+      class="h-full flex flex-col overflow-hidden p-(--padding-8) px-[30px]"
+    >
+      <!-- Router content -->
+      <div class="flex-1 min-h-0 overflow-y-auto pt-[48px] ps-[30px]">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

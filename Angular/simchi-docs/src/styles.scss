@@ -10,7 +10,7 @@
 /* Style the copy button */
 .markdown-clipboard-button {
   position: absolute;
-  top: 8px;
+  top: 8px; 
   right: 8px;
   background: #3b82f6;
   color: white;
@@ -24,4 +24,8 @@
 /* Style the "copied" state */
 .markdown-clipboard-button.copied {
   background: #10b981;
+}
+
+body {
+  direction: ltr;
 }

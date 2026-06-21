@@ -1,0 +1,96 @@
+<div class="w-full h-full">
+  <div class="flex flex-col gap-y-2 w-full pb-20 pt-5">
+    @for (item of navbar_items(); track $index) {
+      <div class="flex flex-col">
+        <!-- Parent Menu Item -->
+        <div
+          class="flex gap-4 items-center py-[16px] ease-out group rounded-lg"
+          [class]="isOpen() ? 'justify-start px-4' : 'justify-center'"
+          [class.cursor-pointer]="item.submenu.length === 0 && item?.isActive"
+          [class.cursor-default]="item.submenu.length > 0 && item?.isActive"
+          [class.cursor-not-allowed]="!item?.isActive"
+          [routerLink]="item?.isActive ? getRouterLink(item) : undefined"
+          (click)="item?.isActive ? onItemClick(item, $index, $event) : undefined"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <!-- Icon -->
+          <div
+            class="icon-navbar-mask transition-ease-out shrink-0"
+            [class]="isOpen() ? 'w-[28px] h-[28px]' : 'w-[28px] h-[28px]'"
+            [class.bg-gray-800]="!isParentOrChildActive(item, $index) && item?.isActive"
+            [class.bg-red-500]="isParentOrChildActive(item, $index) && item?.isActive"
+            [class.bg-gray-300]="!item?.isActive"
+            [class.group-hover:bg-red-500]="item.submenu.length === 0 && item?.isActive"
+            [style]="'--icon-mask: url(/images/navbar/icons/' + item.icon + '.svg)'"
+          ></div>
+
+          <!-- Label -->
+          <div
+            class="transition-all duration-300 overflow-hidden whitespace-nowrap flex items-center justify-start w-full"
+          >
+            <div class="flex justify-between items-center w-full">
+              <p
+                class="text-subtitle-md font-bold whitespace-nowrap"
+                [class.text-gray-800]="!isParentOrChildActive(item, $index) && item?.isActive"
+                [class.text-red-500]="isParentOrChildActive(item, $index) && item?.isActive"
+                [class.group-hover:text-red-500]="item.submenu.length === 0 && item?.isActive"
+                [class.text-gray-300]="!item?.isActive"
+              >
+                {{ item.name | translate }}
+              </p>
+              @if (item.submenu.length > 0) {
+                <div
+                  class="flex items-center justify-center ml-2 shrink-0"
+                  (click)="toggleSubMenu($index, $event)"
+                >
+                  <saman-load-img
+                    [image_path]="'/images/navbar/icons/'"
+                    [givenCssClass]="
+                      'w-6 h-6 cursor-pointer ' +
+                      (isParentOrChildActive(item, $index) ? 'bg-red-500' : 'bg-gray-700')
+                    "
+                    [image_format]="'svg'"
+                    [givenLogicImgLoader]="isExpanded($index) ? 'arrow-up' : 'arrow-down'"
+                  />
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Submenu Items -->
+        @if (item.submenu.length > 0) {
+          <div
+            class="w-full overflow-hidden"
+            [class.max-h-0]="!isExpanded($index)"
+            [class.max-h-[90%]]="isExpanded($index)"
+          >
+            <div class="w-full">
+              <div class="ms-8 flex flex-col gap-y-3 py-2">
+                @for (subm of item.submenu; track subm.id) {
+                  <div
+                    class="flex items-center gap-x-[9px] cursor-pointer rounded-lg py-2 px-12"
+                    [routerLink]="subm.path"
+                    [ngClass]="{
+                      'bg-red-50': isRouteActive(subm.path),
+                      'hover:bg-red-50': true,
+                    }"
+                    (click)="$event.stopPropagation()"
+                  >
+                    <p
+                      class="transition-colors duration-200 text-title-lg"
+                      [class.text-gray-700]="true"
+                    >
+                      {{ subm.name | translate }}
+                    </p>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

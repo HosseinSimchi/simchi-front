@@ -13,18 +13,13 @@
   font-weight: 600;
   color: white;
 
-  background: linear-gradient(270deg, #4f46e5, #06b6d4, #8b5cf6);
+  background: linear-gradient(270deg, #4f46e5, #817ce1, #4f46e5);
   background-size: 600% 600%;
 
   animation: gradientMove 6s ease infinite;
 
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
   cursor: pointer;
   transition: transform 0.2s ease;
-}
-
-.cheatsheet-pill:hover {
-  transform: scale(1.05);
 }
 
 @keyframes gradientMove {

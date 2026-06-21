@@ -1,28 +1,28 @@
 <div class="overflow-hidden h-screen w-screen">
-  <div class="grid grid-cols-12 h-full">
-    <!-- Navbar -->
-    <div class="col-span-full border-b border-[#CBD5E1] max-h-max">
+  <div class="grid grid-rows-[auto_minmax(0,1fr)] grid-cols-12 h-full">
+    <!-- Header -->
+    <div class="col-span-12 border-b border-[#CBD5E1]">
       <simchi-docs-header />
     </div>
 
-    <div
-      class="h-full gap-y-1 p-(--padding-8) px-[30px]"
-      [class]="isSidebarOpen ? 'col-span-2' : 'col-span-1'"
-    >
-      <!-- <saman-navbar
-        [(isOpen)]="isSidebarOpen"
-        (isOpenChange)="onSidebarToggle($event)"
-      /> -->
-    </div>
+    <!-- Body -->
+    <div class="col-span-12 grid grid-cols-12 min-h-0 flex-1">
+      <!-- Sidebar -->
+      <div
+        [class]="isSidebarOpen ? 'col-span-2' : 'col-span-1'"
+        class="h-full border-e border-[#CBD5E1]"
+      >
+        <simchi-docs-navbar [(isOpen)]="isSidebarOpen" (isOpenChange)="onSidebarToggle($event)" />
+      </div>
 
-    <!-- Main Content -->
-    <div
-      [class]="isSidebarOpen ? 'col-span-10' : 'col-span-11'"
-      class="h-full flex flex-col overflow-hidden p-(--padding-8) px-[30px]"
-    >
-      <!-- Router content -->
-      <div class="flex-1 min-h-0 overflow-y-auto pt-[48px] ps-[30px]">
-        <router-outlet></router-outlet>
+      <!-- Main Content -->
+      <div
+        [class]="isSidebarOpen ? 'col-span-10' : 'col-span-11'"
+        class="flex flex-col min-h-0 px-[30px]"
+      >
+        <div class="flex-1 min-h-0 overflow-y-auto pt-[48px] ps-[30px]">
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </div>
   </div>

@@ -8,23 +8,66 @@ export const ApplicationRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: application_routes.DASHBOARD,
+        redirectTo: application_routes.MACHINE_LEARNING_ML_DS,
         pathMatch: 'full',
       },
       {
-        path: application_routes.DASHBOARD,
+        path: application_routes.MACHINE_LEARNING_ML_DS,
+        loadComponent: () => import('./pages/ml-ds/ml-ds').then((m) => m.MlDs),
+      },
+      {
+        path: application_routes.COMPUTER_VISION_DATAYAD,
+        loadComponent: () => import('./pages/cv-datayad/cv-datayad').then((m) => m.CvDatayad),
+      },
+      {
+        path: application_routes.NLP_DATAYAD,
+        loadComponent: () => import('./pages/nlp-datayad/nlp-datayad').then((m) => m.NlpDatayad),
+      },
+      {
+        path: application_routes.DATA_ENGINEERING_DANESHKAR_2025,
         loadComponent: () =>
-          import('./pages/dashboard/dashboard').then(
-            (m) => m.Dashboard,
+          import('./pages/data-engineering-daneshkar-2025/data-engineering-daneshkar-2025').then(
+            (m) => m.DataEngineeringDaneshkar2025,
           ),
       },
-      // {
-      //   path: application_routes.INVOICE_AND_PAYMENT,
-      //   loadComponent: () =>
-      //     import('./pages/invoice-and-payment/invoice-and-payment.component').then(
-      //       (m) => m.InvoiceAndPaymentComponent,
-      //     ),
-      // },
+      {
+        path: application_routes.GEN_AI_DANESHKAR_2025,
+        loadComponent: () =>
+          import('./pages/gen-ai-daneshkar-2025/gen-ai-daneshkar-2025').then(
+            (m) => m.GenAiDaneshkar2025,
+          ),
+      },
+      {
+        path: application_routes.PYTHON,
+        loadComponent: () => import('./pages/python/python').then((m) => m.Python),
+      },
+      {
+        path: application_routes.JAVA_SCRIPT,
+        loadComponent: () => import('./pages/js/js').then((m) => m.Js),
+      },
+      {
+        path: application_routes.REACT_CONCEPTS,
+        loadComponent: () =>
+          import('./pages/react-tutorial/react-tutorial').then((m) => m.ReactTutorial),
+      },
+      {
+        path: application_routes.CI_CD_GIT,
+        loadComponent: () => import('./pages/git/git').then((m) => m.Git),
+      },
+      {
+        path: application_routes.CI_CD_DEPLOYMENT,
+        loadComponent: () => import('./pages/deployment/deployment').then((m) => m.Deployment),
+      },
+      {
+        path: application_routes.ANGULAR_TESTS,
+        loadComponent: () =>
+          import('./pages/angular-tests/angular-tests').then((m) => m.AngularTests),
+      },
+      {
+        path: application_routes.ANGULAR_TUTORIAL,
+        loadComponent: () =>
+          import('./pages/angular-tutorial/angular-tutorial').then((m) => m.AngularTutorial),
+      },
       // {
       //   path: application_routes.ENERGY_PACKAGES,
       //   loadComponent: () =>

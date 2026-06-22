@@ -18,10 +18,10 @@
           <div
             class="icon-navbar-mask transition-ease-out shrink-0"
             [class]="isOpen() ? 'w-[28px] h-[28px]' : 'w-[28px] h-[28px]'"
-            [class.bg-gray-800]="!isParentOrChildActive(item, $index) && item?.isActive"
-            [class.bg-red-500]="isParentOrChildActive(item, $index) && item?.isActive"
+            [class.bg-[#1E293B]]="!isParentOrChildActive(item, $index) && item?.isActive"
+            [class.bg-[#4F46E5]]="isParentOrChildActive(item, $index) && item?.isActive"
             [class.bg-gray-300]="!item?.isActive"
-            [class.group-hover:bg-red-500]="item.submenu.length === 0 && item?.isActive"
+            [class.group-hover:bg-[#4F46E5]]="item.submenu.length === 0 && item?.isActive"
             [style]="'--icon-mask: url(/images/navbar/icons/' + item.icon + '.svg)'"
           ></div>
 
@@ -32,9 +32,9 @@
             <div class="flex justify-between items-center w-full">
               <p
                 class="text-subtitle-md font-bold whitespace-nowrap"
-                [class.text-gray-800]="!isParentOrChildActive(item, $index) && item?.isActive"
-                [class.text-red-500]="isParentOrChildActive(item, $index) && item?.isActive"
-                [class.group-hover:text-red-500]="item.submenu.length === 0 && item?.isActive"
+                [class.text-[#1E293B]]="!isParentOrChildActive(item, $index) && item?.isActive"
+                [class.text-[#4F46E5]]="isParentOrChildActive(item, $index) && item?.isActive"
+                [class.group-hover:text-[#4F46E5]]="item.submenu.length === 0 && item?.isActive"
                 [class.text-gray-300]="!item?.isActive"
               >
                 {{ item.name | translate }}
@@ -48,7 +48,7 @@
                     [image_path]="'/images/navbar/icons/'"
                     [givenCssClass]="
                       'w-6 h-6 cursor-pointer ' +
-                      (isParentOrChildActive(item, $index) ? 'bg-red-500' : 'bg-gray-700')
+                      (isParentOrChildActive(item, $index) ? 'bg-[#4F46E5]' : 'bg-[#1E293B]')
                     "
                     [image_format]="'svg'"
                     [givenLogicImgLoader]="isExpanded($index) ? 'arrow-up' : 'arrow-down'"
@@ -67,23 +67,33 @@
             [class.max-h-[90%]]="isExpanded($index)"
           >
             <div class="w-full">
-              <div class="ms-8 flex flex-col gap-y-3 py-2">
+              <div class="flex flex-col gap-y-2 py-3 px-6">
                 @for (subm of item.submenu; track subm.id) {
                   <div
-                    class="flex items-center gap-x-[9px] cursor-pointer rounded-lg py-2 px-12"
+                    class="flex items-center gap-x-[9px] cursor-pointer rounded-lg py-2 px-12 hover:text-[#4F46E5]"
                     [routerLink]="subm.path"
                     [ngClass]="{
-                      'bg-red-50': isRouteActive(subm.path),
-                      'hover:bg-red-50': true,
+                      'bg-[#EEF2FF] border border-[#4F46E5]': isRouteActive(subm.path),
+                      'hover:bg-[#EEF2FF] hover:border hover:border-[#4F46E5]': true,
                     }"
                     (click)="$event.stopPropagation()"
                   >
                     <p
-                      class="transition-colors duration-200 text-title-lg"
-                      [class.text-gray-700]="true"
+                      class="transition-colors duration-200 text-[16px]"
+                      [class.text-[#4F46E5]]="isRouteActive(subm.path)"
                     >
                       {{ subm.name | translate }}
                     </p>
+                    <span
+                      class="py-1 px-2 text-[10px] rounded-[12px] text-center"
+                      [class]="
+                        !isRouteActive(subm.path)
+                          ? 'text-[#8480e0] border border-[#4F46E5]'
+                          : 'text-[#4F46E5] border border-[#8480e0]'
+                      "
+                    >
+                     {{ subm.year | translate }}
+                    </span>
                   </div>
                 }
               </div>

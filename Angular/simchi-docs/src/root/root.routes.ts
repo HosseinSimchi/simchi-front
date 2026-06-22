@@ -6,7 +6,7 @@ import { application_routes } from '../shared/helpers/routes';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: application_routes.AUTH, // Redirect to the login page by default
+    redirectTo: application_routes.APP  , // Redirect to the login page by default
     pathMatch: 'full',
   },
   {

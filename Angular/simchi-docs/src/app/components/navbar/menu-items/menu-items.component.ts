@@ -57,56 +57,91 @@ export class MenuItemsComponent {
       behavior: 'smooth',
     });
   }
-
+  //'SL' --> 7learn
+  //'DY' --> datayad
+  //'DSH' --> daneshkar
+  //'DNESH' --> daneshjooyar
+  //'SBZ' --> sabzlearn
   readonly navbar_items = signal<NavbarItems[]>([
     this.createNavItem('ml', 'Machine Learning', '', true, [
-      // {
-      //   id: 1,
-      //   name: 'صورت حساب من',
-      //   path: '',
-      // },
-      // {
-      //   id: 2,
-      //   name: 'تاریخچه پرداخت‌ها',
-      //   path: '',
-      // },
+      {
+        id: 1,
+        name: 'SL',
+        path: application_routes.MACHINE_LEARNING_ML_DS,
+        year: '2024',
+      },
     ]),
-    this.createNavItem('dl', 'Deep Learning', '', true, [
-      // {
-      //   id: 1,
-      //   name: 'خرید بسته جدید',
-      //   path: '',
-      // },
-      // {
-      //   id: 2,
-      //   name: 'بسته‌ جاری من',
-      //   path: '',
-      // },
-      // {
-      //   id: 3,
-      //   name: 'تاریخچه بسته‌ها',
-      //   path: '',
-      // },
-    ]),
+    this.createNavItem('dl', 'Deep Learning', '', true, []),
     this.createNavItem('cv', 'Computer Vision', '', true, [
-      // {
-      //   id: 1,
-      //   name: 'خدمات',
-      //   path: '',
-      // },
-      // {
-      //   id: 2,
-      //   name: 'درخواست‌های من',
-      //   path: '',
-      // },
+      {
+        id: 1,
+        name: 'DY',
+        path: application_routes.COMPUTER_VISION_DATAYAD,
+        year: '2025',
+      },
     ]),
-    this.createNavItem('nlp', 'Natural Language Processing', application_routes.WALLET, true),
-    this.createNavItem('data', 'Data Engineering', application_routes.METERS_MANAGEMENT, true),
-    this.createNavItem('py', 'Python', application_routes.CAMPAIGN, true),
-    this.createNavItem('js', 'Java Script', '', true),
-    this.createNavItem('react', 'React Js', '', true),
-    this.createNavItem('angular', 'Angular', '', true),
-    this.createNavItem('ci_cd', 'DevOps', '', true),
+    this.createNavItem('nlp', 'NLP', '', true, [
+      {
+        id: 1,
+        name: 'DY',
+        path: application_routes.NLP_DATAYAD,
+        year: 'TODO',
+      },
+    ]),
+    this.createNavItem('data', 'Data Engineering', '', true, [
+      {
+        id: 1,
+        name: 'DSH',
+        path: application_routes.DATA_ENGINEERING_DANESHKAR_2025,
+        year: '2025',
+      },
+    ]),
+    this.createNavItem('data', 'Generative AI', '', true, [
+      {
+        id: 1,
+        name: 'DSH',
+        path: application_routes.GEN_AI_DANESHKAR_2025,
+        year: '2025',
+      },
+    ]),
+    this.createNavItem('py', 'Python', application_routes.PYTHON, true),
+    this.createNavItem('js', 'Java Script', application_routes.JAVA_SCRIPT, true),
+    this.createNavItem('react', 'React Js', '', true, [
+      {
+        id: 1,
+        name: 'Tutorial',
+        path: application_routes.REACT_CONCEPTS,
+        year: '2021, Expe.',
+      },
+    ]),
+    this.createNavItem('angular', 'Angular', '', true, [
+      {
+        id: 1,
+        name: 'Tutorial',
+        path: application_routes.ANGULAR_TUTORIAL,
+        year: '2022, Expe.',
+      },
+      {
+        id: 2,
+        name: 'UTests',
+        path: application_routes.ANGULAR_TESTS,
+        year: '2022, Expe.',
+      },
+    ]),
+    this.createNavItem('ci_cd', 'DevOps', '', true, [
+      {
+        id: 1,
+        name: 'Git',
+        path: application_routes.CI_CD_GIT,
+        year: 'Expe.',
+      },
+      {
+        id: 2,
+        name: 'Deployment',
+        path: application_routes.CI_CD_DEPLOYMENT,
+        year: 'Expe.',
+      },
+    ]),
     this.createNavItem('logout', 'Logout', application_routes.AUTH, true),
   ]);
 
@@ -200,7 +235,7 @@ export class MenuItemsComponent {
 
   private normalizeUrl(url: string): string {
     const parts = url.split('/').filter(Boolean);
-    if (parts[0] === 'saman') parts.shift();
+    if (parts[0] === 'simchi-docs') parts.shift();
     return '/' + parts.join('/');
   }
 

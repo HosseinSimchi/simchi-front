@@ -1,1 +1,22 @@
-<p>angular-tutorial works!</p>
+<div class="tutorial-container">
+  @if (isLoading()) {
+    <div class="loading-state">
+      <p>Loading tutorial content...</p>
+    </div>
+  }
+
+  @if (error()) {
+    <div class="error-state">
+      <p>{{ error() }}</p>
+      <button (click)="retryLoad()">Retry</button>
+    </div>
+  }
+
+  @if (!isLoading() && !error()) {
+    <!-- Use [data] binding -->
+    <markdown [data]="markdownContent()" clipboard></markdown>
+
+    <!-- OR use content projection -->
+    <!-- <markdown>{{ markdownContent() }}</markdown> -->
+  }
+</div>

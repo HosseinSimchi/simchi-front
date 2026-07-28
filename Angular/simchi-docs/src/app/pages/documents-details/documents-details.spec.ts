@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NlpDatayad } from './nlp-datayad';
+import { DocumentsDetails } from './documents-details';
 
-describe('NlpDatayad', () => {
-  let component: NlpDatayad;
-  let fixture: ComponentFixture<NlpDatayad>;
+describe('DocumentsDetails', () => {
+  let component: DocumentsDetails;
+  let fixture: ComponentFixture<DocumentsDetails>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NlpDatayad],
+      imports: [DocumentsDetails],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NlpDatayad);
+    fixture = TestBed.createComponent(DocumentsDetails);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

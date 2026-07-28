@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CvDatayad } from './cv-datayad';
+import { Documents } from './documents';
 
-describe('CvDatayad', () => {
-  let component: CvDatayad;
-  let fixture: ComponentFixture<CvDatayad>;
+describe('Documents', () => {
+  let component: Documents;
+  let fixture: ComponentFixture<Documents>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvDatayad],
+      imports: [Documents],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CvDatayad);
+    fixture = TestBed.createComponent(Documents);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

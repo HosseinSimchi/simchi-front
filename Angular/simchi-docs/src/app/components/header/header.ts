@@ -1,29 +1,30 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostListener,
-  inject,
-  signal,
-} from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoadImgComponent } from "../load-img/load-img.component";
+import { RouterModule } from '@angular/router';
+import { LoadImgComponent } from '../load-img/load-img.component';
 
-interface NavigationItem {
+export interface NavigationItem {
   title: string;
-  description: string;
+  description?: string;
   route: string;
   icon?: string;
 }
 
-interface NavigationColumn {
+export interface NavigationColumn {
   title: string;
-  description: string;
+  description?: string;
   items: NavigationItem[];
 }
+
+export interface NavigationMenu {
+  label: string;
+  route?: string;
+  megaMenu?: NavigationColumn[];
+}
+
 @Component({
   selector: 'simchi-docs-header',
+  standalone: true,
   imports: [CommonModule, RouterModule, LoadImgComponent],
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -31,172 +32,290 @@ interface NavigationColumn {
 export class Header {
   private readonly elementRef = inject(ElementRef);
 
-  readonly isProductsMenuOpen = signal(false);
+  readonly openedMenu = signal<string | null>(null);
   readonly isMobileMenuOpen = signal(false);
 
-  readonly navigationItems = [
+  readonly navigation: NavigationMenu[] = [
     {
-      label: 'Features',
-      route: '/features',
+      label: 'Frontend',
+      megaMenu: [
+        {
+          title: 'ReactJS',
+          items: [
+            {
+              title: 'Installation and Setup',
+              route: '/react-installation',
+            },
+            {
+              title: 'Best Practice Structure',
+              route: '/react-bp-structure',
+            },
+            {
+              title: 'Academic Tutorials',
+              route: '/react-academic-tutorial',
+            },
+            {
+              title: 'Css',
+              route: '/react-css',
+            },
+            {
+              title: 'Conditions and Loops',
+              route: '/react-condition-and-loops',
+            },
+            {
+              title: 'JS Usefull Methods',
+              route: '/react-js-usefull-methods',
+            },
+            {
+              title: 'Props',
+              route: '/react-props',
+            },
+            {
+              title: 'Hooks',
+              route: '/react-hooks',
+            },
+            {
+              title: 'Routers',
+              route: '/react-routers',
+            },
+            {
+              title: 'High Order Component (HOC)',
+              route: '/react-hoc',
+            },
+            {
+              title: 'Context',
+              route: '/react-context',
+            },
+            {
+              title: 'Portal',
+              route: '/react-portal',
+            },
+            {
+              title: 'Container Presenter Pattern',
+              route: '/react-container-presenter-pattern',
+            },
+            {
+              title: 'Redux',
+              route: '/react-redux',
+            },
+            {
+              title: 'Redux Toolkit',
+              route: '/react-redux-toolkit',
+            },
+            {
+              title: 'Interview',
+              route: '/react-interview',
+            },
+            {
+              title: 'Unit tests',
+              route: '/react-unit-tests',
+            },
+            {
+              title: 'Interview Questions',
+              route: '/react-interview-questions',
+            },
+          ],
+        },
+        {
+          title: 'ReactJS Libraries',
+          items: [
+            {
+              title: 'Axios',
+              route: '/react-axios',
+            },
+            {
+              title: 'Formik',
+              route: '/react-formik',
+            },
+            {
+              title: 'Google ReCAPTCHA',
+              route: '/react-google-recaptcha',
+            },
+            {
+              title: 'Lodash',
+              route: '/react-lodash',
+            },
+            {
+              title: 'React Hook Form',
+              route: '/react-hook-form',
+            },
+            {
+              title: 'React Query',
+              route: '/react-query',
+            },
+            {
+              title: 'React i18next',
+              route: '/react-i18next',
+            },
+            {
+              title: 'Recharts',
+              route: '/react-recharts',
+            },
+            {
+              title: 'SMS',
+              route: '/react-sms',
+            },
+            {
+              title: 'React Icons',
+              route: '/react-icons',
+            },
+          ],
+        },
+        {
+          title: 'Angular',
+          items: [
+            {
+              title: 'Installation and Setup',
+              route: '/ng-installation',
+            },
+            {
+              title: 'Best Practice Structure',
+              route: '/ng-bp-structure',
+            },
+            {
+              title: 'State Management',
+              route: '/ng-state-management',
+            },
+            {
+              title: 'Components',
+              route: '/ng-components',
+            },
+            {
+              title: 'Signals',
+              route: '/ng-signals',
+            },
+            {
+              title: 'Templates',
+              route: '/ng-tempaltes',
+            },
+            {
+              title: 'Css',
+              route: '/ng-css',
+            },
+            {
+              title: 'Services',
+              route: '/ng-services',
+            },
+            {
+              title: 'Routes',
+              route: '/ng-routes',
+            },
+            {
+              title: 'Guards',
+              route: '/ng-guards',
+            },
+            {
+              title: 'Interceptors',
+              route: '/ng-interceptors',
+            },
+            {
+              title: 'Unit tests',
+              route: '/ng-unit-tests',
+            },
+            {
+              title: 'Interview Questions',
+              route: '/ng-interview-questions',
+            },
+          ],
+        },
+      ],
     },
+
     {
-      label: 'Pricing',
-      route: '/pricing',
+      label: 'Backend',
+      megaMenu: [
+        {
+          title: 'NestJS',
+          items: [
+            // {
+            //   title: 'API',
+            //   description: 'RESTful APIs',
+            //   route: '/api',
+            // },
+          ],
+        },
+      ],
     },
+
     {
-      label: 'Resources',
-      route: '/resources',
+      label: 'Artificial Intelligence',
+      megaMenu: [
+        {
+          title: 'Machine Learning',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+        {
+          title: 'Deep Learning',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+        {
+          title: 'Computer Vision',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+        {
+          title: 'Generative AI',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+        {
+          title: 'Data Engineering',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+        {
+          title: 'Natural Language Processing (NLP)',
+          items: [
+            // {
+            //   title: 'About',
+            //   route: '/about',
+            // },
+          ],
+        },
+      ],
     },
   ];
 
-  readonly productColumns: NavigationColumn[] = [
-    {
-      title: 'Platform',
-      description: 'Everything you need to build and grow your business.',
-      items: [
-        {
-          title: 'Analytics',
-          description: 'Understand your traffic and performance.',
-          route: '/analytics',
-          icon: 'analytics',
-        },
-        {
-          title: 'Engagement',
-          description: 'Build stronger relationships with customers.',
-          route: '/engagement',
-          icon: 'engagement',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-        {
-          title: 'Security',
-          description: 'Keep your data protected and secure.',
-          route: '/security',
-          icon: 'security',
-        },
-      ],
-    },
-    {
-      title: 'Solutions',
-      description: 'Powerful tools designed for every team.',
-      items: [
-        {
-          title: 'Marketing',
-          description: 'Grow your audience and increase conversions.',
-          route: '/marketing',
-        },
-        {
-          title: 'Sales',
-          description: 'Close deals faster and improve your pipeline.',
-          route: '/sales',
-        },
-        {
-          title: 'Customer Success',
-          description: 'Build stronger customer relationships.',
-          route: '/customer-success',
-        },
-      ],
-    },
-    {
-      title: 'Resources',
-      description: 'Learn, explore, and get inspired.',
-      items: [
-        {
-          title: 'Documentation',
-          description: 'Learn how everything works.',
-          route: '/documentation',
-        },
-        {
-          title: 'Blog',
-          description: 'Insights, news, and product updates.',
-          route: '/blog',
-        },
-        {
-          title: 'Tutorials',
-          description: 'Step-by-step guides and tutorials.',
-          route: '/tutorials',
-        },
-      ],
-    },
-    {
-      title: 'Company',
-      description: 'Get to know our company and our mission.',
-      items: [
-        {
-          title: 'About us',
-          description: 'Learn more about our mission.',
-          route: '/about',
-        },
-        {
-          title: 'Careers',
-          description: 'Join our growing team.',
-          route: '/careers',
-        },
-        {
-          title: 'Contact',
-          description: 'We would love to hear from you.',
-          route: '/contact',
-        },
-      ],
-    },
-  ];
-
-  toggleProductsMenu(): void {
-    this.isProductsMenuOpen.update((isOpen) => !isOpen);
+  toggleMenu(label: string): void {
+    this.openedMenu.update((current) => (current === label ? null : label));
   }
 
-  closeProductsMenu(): void {
-    this.isProductsMenuOpen.set(false);
+  openMenu(label: string): void {
+    this.openedMenu.set(label);
+  }
+
+  closeMenu(): void {
+    this.openedMenu.set(null);
+  }
+
+  isMenuOpen(label: string): boolean {
+    return this.openedMenu() === label;
   }
 
   toggleMobileMenu(): void {
-    this.isMobileMenuOpen.update((isOpen) => !isOpen);
+    this.isMobileMenuOpen.update((value) => !value);
   }
 
   closeMobileMenu(): void {
@@ -204,7 +323,7 @@ export class Header {
   }
 
   closeMenus(): void {
-    this.closeProductsMenu();
+    this.closeMenu();
     this.closeMobileMenu();
   }
 
